@@ -46,7 +46,7 @@ public class OracleProcedures {
 	 * @param registro
 	 * @return
 	 */
-	public int obtenerParametros() {
+	public int obtenerTiempoReinvocacion() {
 
 		try {
 

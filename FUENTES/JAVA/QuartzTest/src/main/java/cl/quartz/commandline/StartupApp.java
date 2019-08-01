@@ -4,9 +4,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 
 import cl.quartz.dao.OracleProcedures;
+import cl.quartz.properties.Constantes;
 
 /**
  * StartupApp
@@ -15,6 +17,7 @@ import cl.quartz.dao.OracleProcedures;
  *
  */
 @Component
+@EnableScheduling
 public class StartupApp implements CommandLineRunner {
 
 	/**
@@ -32,7 +35,9 @@ public class StartupApp implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		log.info("Run Automatico desde [CommandLineRunner]");
-		dao.obtenerParametros();
+		Constantes.INTERVALO_REPETICION = dao.obtenerTiempoReinvocacion();
+		
+		log.info("Minutos entre Repeticiones: " + Constantes.INTERVALO_REPETICION);
 
 	}
 

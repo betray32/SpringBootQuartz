@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author ccontrerasc
  *
  */
-@SpringBootApplication(scanBasePackages = { "cl.quartz.dao", "cl.quartz.properties" , "cl.quartz.commandline" })
+@SpringBootApplication(scanBasePackages = { "cl.quartz.dao", "cl.quartz.properties" , "cl.quartz.commandline" , "cl.quartz.config" })
 public class QuartzTestApplication {
 
 	private static final Log log = LogFactory.getLog(QuartzTestApplication.class);
